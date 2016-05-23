@@ -1,4 +1,5 @@
-# bayes_single_ellipse_fitter
+# bayes single ellipse fitter
+
 Fits an ellipse to an image (i.e. a galaxy) assumes there is only one ellipse in the image
 
 This uses a very simple baye code (assuming a gaussian distribution and that all 
