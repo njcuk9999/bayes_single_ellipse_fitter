@@ -155,7 +155,6 @@ def lnprob(ps, d_x, d_y, d_f, d_ef, pdict):
     :param total: the total number of runs
     :return:
     """
-
     # print progress
     global iterator
     refreshing_msg('\t Processing {0}\t\t\t'.format(iterator))
@@ -202,7 +201,6 @@ def mcmcrun(gridparams, runs, walkers, burn, dim):
     :param dim: number of dimensions (in this case 5: a, b, x0, y0, t)
     :return:
     """
-
     # select a random starting point for each walker in the parameter space
     jx, p0 = 0, []
     while jx < walkers:
@@ -212,7 +210,6 @@ def mcmcrun(gridparams, runs, walkers, burn, dim):
             # p0i.append(np.random.uniform(np.min(ix), np.max(ix)))
         p0.append(p0i)
         jx += 1
-
     # setup the emcee Ensemble Sampler
     args = [datax, datay, dataf, dataef, gridparams]
     sampler = emcee.EnsembleSampler(walkers, dim, lnprob, args=args, threads=8)
